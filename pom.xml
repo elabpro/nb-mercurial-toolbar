@@ -4,7 +4,7 @@
 
     <groupId>de.markiewb.netbeans.plugins</groupId>
     <artifactId>hg.toolbar</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <packaging>nbm</packaging>
 
     <name>Mercurial toolbar</name>
@@ -30,7 +30,58 @@
     </repositories>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-lookup</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-windows</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-filesystems</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-nodes</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-ui</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-awt</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-text</artifactId>
+            <version>RELEASE82</version>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-netbeans-modules-projectapi</artifactId>
+            <version>RELEASE82</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-loaders</artifactId>
+            <version>RELEASE82</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
@@ -42,6 +93,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <!-- keep it for backwards compatibility to previous versions-->
+                    <useOSGiDependencies>false</useOSGiDependencies>
                     <codeNameBase>mercurial.toolbar</codeNameBase>
                     <licenseFile>LICENSE-2.0.txt</licenseFile>
                     <author>Benno Markiewicz (benno.markiewicz@googlemail.com)</author>
@@ -79,6 +131,11 @@
 &lt;/p&gt;
 
 &lt;h2&gt;Updates&lt;/h2&gt;
+&lt;h3&gt;1.0.3:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;hg flow support&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3&gt;1.0.0:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;initial version&lt;/li&gt;
