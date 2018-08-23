@@ -4,7 +4,7 @@
 
     <groupId>de.markiewb.netbeans.plugins</groupId>
     <artifactId>hg.toolbar</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>nbm</packaging>
 
     <name>Mercurial toolbar</name>
@@ -44,6 +44,7 @@
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-windows</artifactId>
             <version>RELEASE82</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
@@ -81,6 +82,17 @@
             <artifactId>org-openide-loaders</artifactId>
             <version>RELEASE82</version>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-windows</artifactId>
+            <version>RELEASE82</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.openide.windows</groupId>
+            <artifactId>io</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

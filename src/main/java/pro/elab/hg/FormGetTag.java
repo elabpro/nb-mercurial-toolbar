@@ -14,15 +14,21 @@ public class FormGetTag extends java.awt.Dialog {
     String label = null;
     String projectDir = null;
     int hgMode = 0;
+    hgFlow hf;
 
     /**
      * Creates new form FormGetTag
      */
+
     public FormGetTag(java.awt.Frame parent, boolean modal, String pDir, int mode) {
         super(parent, modal);
         initComponents();
         hgMode = mode;
         projectDir = pDir;
+        hf = new hgFlow(projectDir);
+        if (!hf.isFlowProject()) {
+            closeDialog(null);
+        }
     }
 
     /**
@@ -38,6 +44,9 @@ public class FormGetTag extends java.awt.Dialog {
         jButton1 = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                checkProject(evt);
+            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 closeDialog(evt);
             }
@@ -72,12 +81,10 @@ public class FormGetTag extends java.awt.Dialog {
         label = jTextField1.getText();
         switch (hgMode) {
             case 1: {
-                hgFlow hf = new hgFlow(projectDir);
                 hf.featureStart(label);
                 break;
             }
             case 2: {
-                hgFlow hf = new hgFlow(projectDir);
                 hf.releaseStart(label);
                 break;
             }
@@ -87,6 +94,13 @@ public class FormGetTag extends java.awt.Dialog {
         }
         closeDialog(null);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void checkProject(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_checkProject
+        // TODO add your handling code here:
+        if (!hf.isFlowProject()) {
+            closeDialog(evt);
+        }
+    }//GEN-LAST:event_checkProject
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
